@@ -1,0 +1,193 @@
+:root {
+    --bg-dark: #121212;
+    --text-white: #FFFFFF;
+    --accent-green: #16C172;
+    --card-bg: #1A1A1A;
+    --text-muted: #888888;
+    --font-family: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('van gogh.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--text-white);
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
+/* Dark mode mantém a imagem de fundo, apenas garante contraste */
+body.dark-mode {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('van gogh.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--text-white);
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* CABEÇALHO (HEADER) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.social-icons {
+    display: flex;
+    gap: 25px;
+}
+
+.social-icons a i {
+    font-size: 1.1rem;
+    color: var(--text-white);
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover i {
+    color: var(--accent-green);
+    transform: scale(1.2);
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.logo-dot-dev {
+    color: var(--accent-green);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-green);
+}
+
+.about-hero {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.hero-subtext {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    color: var(--accent-green);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.projects-grid,
+.research-grid {
+    padding: 10px; /* Retirei o display flex daqui para espaçamentos do cards. Originalmente tinha o display flex aqui, mas isso causava problemas de espaçamento entre os cards. Agora o display flex está nos cards, e o grid é controlado por margens e gaps. */
+    flex-wrap: wrap;
+    gap: 30px;
+    
+
+}
+
+.project-card,
+.research-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 40px;
+    flex: 1 1 300px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover,
+.research-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-date,
+.research-date {
+    color: var(--accent-green);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.project-title,
+.research-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.project-description,
+.research-summary {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.project-link {
+    color: var(--accent-green);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    padding: 50px 0;
+    margin-top: 50px;
+}
