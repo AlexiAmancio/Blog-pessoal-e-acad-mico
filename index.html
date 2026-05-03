@@ -1,103 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALEXI Amâncio.dev | Fullstack Technology</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ALX.SHIFT | Fullstack Development</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Inicialização dos icones -->
+    
+   
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Bibliotecas Externas -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
+<body>
 
-<body class="dark-mode tech-v1">
+    <!-- Background de Vídeo -->
+    <div class="video-bg">
+        <video autoplay muted loop playsinline>
+            <source src="videoplayback.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="video-overlay"></div>
 
-
-
-    <!-- No começo de header cabeça do site Aqui cria uma linha em horizontal bem abaixo da barra de pesquisa do navegador -->
-    <header>
+    <!-- Header Flutuante -->
+    <header id="main-header">
         <div class="logo">
-            <span class="logo-text">ALEXI AMÂNCIO</span><span class="logo-dot-dev">.dev</span>
+            <span class="logo-text">ALEXI AMANCIO</span><span class="logo-dot-dev">.dev</span>
         </div>
-        <div id="coffee-icon-placeholder"></div>
         <nav>
-            <ul>
-                <!-- Referencias dos links dos sites -->
+            <ul class="nav-links">
                 <div class="social-icons">
-                    <a href="https://github.com/seu-user" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://linkedin.com/in/seu-user" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/aleximalloc/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/AlexiAmancio" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/alexi-dias-amâncio-38a77b32b" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://instagram.com/aleximalloc/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                 </div>
                 <li><a href="#start">INÍCIO</a></li>
-                <li><a href="#about">QUEM EU SOU?</a></li>
+                <li><a href="#about">BIO</a></li>
                 <li><a href="#projects">PROJETOS</a></li>
                 <li><a href="#research">PESQUISAS</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="main-container">
-        <!-- Section + id Tag semântica que divide o site em áreas temáticas Quem eu sou, Projetos, Pesquisas. A div usada para agrupar os elementos, fica até mais fácil para ser usada no css-->
-        <section id="start" class="about-hero">
-            <div class="hero-content">
-                <h1>Acredito que a tecnologia só faz sentido quando compartilhada. Neste espaço, abro as portas para
-                    minhas pesquisas e mostro os bastidores de cada projeto que desenvolvo. Convido você a explorar esse
-                    ecossistema de inovação comigo.</h1>
-                <p class="hero-subtext">Estudante de Ciências da Computação & Pesquisador de Tech</p>
-                <p><a href="#about">Venha me conhecer!</a></p>
-            </div>
-        </section>
-
-        <section id="projects" class="project-section"> <!-- Inicio aqui-->
-            <h2 class="section-title">MEUS PROJETOS</h2>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="card-icon"></div>
-                    <p class="project-date">AGO/2024</p>
-                    <h3 class="project-title">SISTEMA DE PAGAMENTO EM JAVA</h3>
-                    <p class="project-description">Backend robusto em Java com Spring Boot, integração com MySQL e APIs
-                        externas.</p>
-                    <a href="#" class="project-link">LEIA MAIS</a>
-                </div>
-
-            </div>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="card-icon"></div>
-                    <p class="project-date">AGO/2024</p>
-                    <h3 class="project-title">Game Engine & Logic (C)</h3>
-                    <p class="project-description">Desenvolvimento de um RPG top-down via Allegro 5. Foco em gerência manual de memória, sistemas de colisão e performance de renderização.</p>
-                    <a href="#" class="project-link">LEIA MAIS</a>
-                </div>
-
-            </div>
-        </section>
+    <!-- Container Principal -->
+    <main class="main-container">
         
-
-        <section id="research" class="research-section">
-            <h2 class="section-title research-title">MINHAS PESQUISAS</h2>
-
-            <div class="research-grid">
-                <div class="research-card">
-                    <div class="card-icon"></div>
-                    <p class="research-date">AGO/2026</p>
-                    <h3 class="research-title">ANÁLISE DE PERFORMANCE EM ASSEMBLY</h3>
-                    <p class="research-summary">Log detalhado de testes de performance comparando micro-otimizações em C vs. Assembly.</p>
-                </div>
-
+        <!-- Hero Section -->
+        <section id="start" class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Full-Stack Developer & Tech Enthusiast</h1>
+                <p id="typed-subtitle" class="hero-subtitle"></p>
             </div>
-        </section> 
+        </section>
 
-        <footer>
-            <p>&copy; 2026 ALEXI AMANCIO.dev - Todos os direitos reservados.</p>
-        </footer>
+        <!-- Bio Section -->
+        <section id="about" class="about-section reveal">
+    <div class="about-grid">
+        <div class="about-image">
+            <img src="fotolink.jpg" alt="Alexi Dias Amâncio">
+            <div class="image-border"></div>
+        </div>
+        
+        <!-- Bloco modificado -->
+        <div class="about-text-content">
+            <h2 class="section-title">QUEM EU SOU?</h2>
+            <p>
+                Graduando no <strong>Centro Universitário Senac</strong> e entusiasta de tecnologia, sou <strong>Alexi Dias Amâncio</strong>. 
+                Minha trajetória acadêmica é focada em entender a arquitetura da computação por completo. 
+                Para isso, estou me dedicando ao aprendizado de linguagens fundamentais como <strong>C e Assembly 8086</strong>, 
+                além de expandir minha visão com <strong>Java e Python</strong>.
+            </p>
+            <p>
+                Sou um pesquisador apaixonado por descobrir como a performance e as 
+                <strong>Ciências Quânticas</strong> moldarão o futuro do desenvolvimento.
+            </p>
+        </div>
+    </div>
+</section>
+        <!-- Transformado cards em links clicados, alterado <div> pela <a> -->
+        <!-- Projetos Section -->
+         <!-- Fazer card clicavel assim que subir o projeto em java no git-->
+        <section id="projects" class="reveal">
+           
+            <h2 class="section-title">MEUS PROJETOS</h2>
+            <div class="grid-layout">
+                <div class="glass-card">
+                    <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                    <p class="card-date">ABR 2026</p>
+                    <h3 class="card-title">Algoritmos e Estruturas de Dados</h3>
+                    <p>Análise de complexidade e implementação de estruturas avançadas em Java, focando em otimização.</p>
+                </div>
+            
+            <a href="https://github.com/victor-jesus/PI-II-Sri-Lanka" target="_blank" class="glass-card" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card-icon"><i class="fa-solid fa-gamepad"></i></div>
+            <p class="card-date">NOV 2025</p>
+            <h3 class="card-title">Game Engine & Logic (C)</h3>
+            <p>RPG top-down via Allegro 5. Gerência manual de memória, sistemas de colisão e renderização otimizada.</p>
+            </a>
 
+          
+        </section>
+
+        <!-- Pesquisas Section -->
+        <section id="research" class="reveal">
+            <h2 class="section-title">MINHAS PESQUISAS</h2>
+            <div class="grid-layout">
+                <div class="glass-card research-trigger" data-research="quantum">
+                    <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <p class="card-date">NOV 2025</p>
+                    <h3 class="card-title">Ciências Quânticas</h3>
+                    <p>Simulação de fenômenos quânticos em clusters clássicos e otimização de cálculos de estado.</p>
+                </div>
+                <div class="glass-card research-trigger" data-research="assembly">
+                    <div class="card-icon"><i class="fa-solid fa-memory"></i></div>
+                    <p class="card-date">JAN 2026</p>
+                    <h3 class="card-title">Assembly 8086</h3>
+                    <p>Otimização de ciclos de instrução de hardware e manipulação de registradores.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer  -->
+    <footer class="main-footer reveal">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>ALEXI AMANCIO<span class="logo-dot-dev">.dev</span></h3>
+                <p>Construindo arquiteturas sólidas, do back-end ao front-end. Foco em performance e transparência.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#start">Início</a></li>
+                    <li><a href="#about">Bio</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#research">Pesquisas</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Conecte-se</h4>
+                <div class="social-icons-footer">
+                    <a href="https://github.com/AlexiAmancio" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="https://linkedin.com/in/alexi-dias-amâncio-38a77b32b" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://instagram.com/aleximalloc/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ALX.Malloc Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Pesquisa -->
+    <div id="research-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <aside class="modal-sidebar">
+                <ul class="sidebar-list">
+                    <li><a href="#res-intro">Início</a></li>
+                    
+                  
+                    <li><a href="#res-obj">Objetivo</a></li>
+                    <li><a href="#res-dev">Desenvolvimento</a></li>
+                    <li><a href="#res-bib">Bibliografia</a></li>
+
+                    
+                
+                </ul>
+            </aside>
+            <article class="modal-content" id="modal-body">
+                <!-- Injetado via JS -->
+            </article>
+        </div>
     </div>
 
+    <!-- JS Externo -->
+    <script src="script.js"></script>
 </body>
-
 </html>
